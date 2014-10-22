@@ -5,7 +5,7 @@
 <script type="text/javascript">
         function send() {
         var req = new XMLHttpRequest();
-        var server = "http://app2.ssobridge.com:8080/openam";
+        var server = "http://[openam server and port]/openam";
         var statusElem = document.getElementById("status");
             var data = {
               "tokenId" : document.getElementById("tokenId").value,
@@ -31,7 +31,7 @@
             req.send(JSON.stringify(data));
             statusElem.innerHTML = "Waiting for server response..."
             document.write("Your password has been reset.");
-            document.write("<br>Click <a href='http://app2.ssobridge.com:8080/openam'>here</a> to login again.");
+            document.write("<br>Click <a href='http://[openam server and port]/openam'>here</a> to login again.");
         }
     </script>
 <div id="content">

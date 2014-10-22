@@ -3,31 +3,29 @@
 <body>
 
 <script type="text/javascript">
-        function send() {
-        var req = new XMLHttpRequest();
+        function post() {
+        var req1 = new XMLHttpRequest();
         var server = "http://[AM server and port]/openam";
-        var statusElem = document.getElementById("status");
+        var stat = document.getElementById("status");
             var data = {
               "username" : document.getElementById("username").value,
               "subject" : document.getElementById("subject").value,
               "message" : document.getElementById("message").value
             };
 
-            req.onreadystatechange = function() {
-                if (req.readyState == 4) {
-                    statusElem.innerHTML = req.responseText;
+            req1.onreadystatechange = function() {
+                if (req1.readyState == 4) {
+                    stat.innerHTML = req1.responseText;
                     if (req.status == 200) {
                      document.getElementById("content").style.display = "none";
                     }
                 }
             };
-            req.open("POST",
-                server + "/json/users?_action=forgotPassword",
-                     true);
+            req1.open("POST", server + "/json/users?_action=forgotPassword", true);
 
-            req.setRequestHeader("Content-Type", "application/json");
-            req.send(JSON.stringify(data));
-            statusElem.innerHTML = "Waiting for server response..."
+            req1.setRequestHeader("Content-Type", "application/json");
+            req1.send(JSON.stringify(data));
+            stat.innerHTML = "Waiting for server response..."
             document.write("Your request has been sent.");
             document.write("<br>Please check your email for instructions on reseting your password.");
         }
@@ -38,10 +36,9 @@
 <p>Username: <input type="text" id="username"></p>
 <input type="hidden" id="subject" value="Reset your forgotten password">
 <input type="hidden" id="message" value="Follow this link to reset your password">
-<p><input type="button" value="Change" id="button" onclick="send();"></p>
+<p><input type="button" value="Change" id="button" onclick="post();"></p>
 </form>
 </div>
-<p id="status"></p>
 </body>
 </html>
 

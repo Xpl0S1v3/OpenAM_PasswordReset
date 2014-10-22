@@ -5,7 +5,7 @@
 <script type="text/javascript">
         function send() {
         var req = new XMLHttpRequest();
-        var server = "http://app2.ssobridge.com:8080/openam";
+        var server = "http://[AM server and port]/openam";
         var statusElem = document.getElementById("status");
             var data = {
               "username" : document.getElementById("username").value,

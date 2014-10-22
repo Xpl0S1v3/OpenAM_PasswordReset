@@ -3,7 +3,7 @@ OpenAM_PasswordReset
 
 OpenAM_Password_Reset_Rest
 
-These files extend OpenAM's REST-based password reset functionality
+These files are a proof of concept to extend OpenAM's REST-based password reset functionality
 
 - Add these two files to your OpenAM deployment root (e.g. /tomcat7/webapps/openam)
 - Modify the server urls to the appropriate servers in your environment

@@ -14,4 +14,4 @@ To initiate the password reset direct your browser to:
 - http://[AM server and port]/openam/resetPassword.jsp
 - provide a valid username (press enter)
 - check email for link to reset password (click on link)
-- - provide a new password (and confirm) (press enter)
+- provide a new password (and confirm) (press enter)
